@@ -31,6 +31,18 @@ module.exports.connections = {
   localDiskDb: {
     adapter: 'sails-disk'
   },
+  mysql: {
+    module    : 'sails-mysql',
+    host      : 'localhost',
+    port      : 3306,
+    user      : 'root',
+    password  : '',
+    database  : 'tilapia',
+
+    // Optional 
+    charset   : 'utf8',
+    collation : 'utf8_swedish_ci'
+  }
 
   /***************************************************************************
   *                                                                          *
