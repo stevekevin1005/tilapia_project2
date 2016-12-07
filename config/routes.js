@@ -33,8 +33,11 @@ module.exports.routes = {
   ***************************************************************************/
 
   '/': {
-    view: 'homepage'
-  }
+    view: 'index'
+  },
+  'get /tilapia/2/go': 'Tilapia2Controller.getGo',
+  'get /tilapia/2/contig': 'Tilapia2Controller.getContig',
+  'get /tilapia/2/ssr': 'Tilapia2Controller.getSSR'
 
   /***************************************************************************
   *                                                                          *
