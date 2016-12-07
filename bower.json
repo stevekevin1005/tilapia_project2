@@ -1,0 +1,23 @@
+{
+  "name": "tilapia_project",
+  "description": "a Sails application",
+  "main": "app.js",
+  "authors": [
+    "yangjunzhang"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/stevekevin1005/tilapia_project2",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "assets/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "es6-promise": "*",
+    "jsrender": "^0.9.83",
+    "sweetalert2": "^4.2.6"
+  }
+}
