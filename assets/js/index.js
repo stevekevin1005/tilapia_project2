@@ -10,7 +10,6 @@ $(function(){
 				url: "/tilapia/2/go?name="+key,
 				type: 'get',
 				success: function(goList){
-					console.log('goList-->', goList);
 					$(".tilapia_2_load").removeClass("loader");
 					var goListTemplate = $.templates( "#goList" );
 					var goListHtml = goListTemplate.render(goList);
@@ -84,11 +83,11 @@ $(function(){
 													ssr += "<tr style='background: cyan'>";
 													var refArray = SSRClusterList[geneIndex].SSRList[ssrIndex].tilapia2VARs[i].ref.toUpperCase().split("");
 													var refIndex = 0;
-													for(var k = start-200;k < end+200;k++){
-														var position = SSRClusterList[geneIndex].SSRList[ssrIndex].tilapia2VARs[i].position;
-														var length = SSRClusterList[geneIndex].SSRList[ssrIndex].tilapia2VARs[i].ref.length;
+													for(var k = start-200;k <= end+200;k++){
+														var position =parseInt(SSRClusterList[geneIndex].SSRList[ssrIndex].tilapia2VARs[i].position);
+														var length = parseInt(SSRClusterList[geneIndex].SSRList[ssrIndex].tilapia2VARs[i].ref.length);
 														
-														if((k >= position - 1) && (k <= position + length)){
+														if((k >= position - 1) && (k < position + length - 1)){
 															ssr += ("<td>"+refArray[refIndex]+"</td>");
 															refIndex++;
 														}
@@ -101,12 +100,11 @@ $(function(){
 													ssr += "<tr>";
 													var altArray = SSRClusterList[geneIndex].SSRList[ssrIndex].tilapia2VARs[i].alt.toUpperCase().split("");
 													var altIndex = 0;
-													var position = SSRClusterList[geneIndex].SSRList[ssrIndex].tilapia2VARs[i].position;
-													var length = SSRClusterList[geneIndex].SSRList[ssrIndex].tilapia2VARs[i].alt.length;
-													console.log('position->', position);
-													console.log('length->', length);
-													for(var k = start-200;k < end+200;k++){
-														if(k >= position - 1 && k <= position + length){
+													var position = parseInt(SSRClusterList[geneIndex].SSRList[ssrIndex].tilapia2VARs[i].position);
+													var length = parseInt(SSRClusterList[geneIndex].SSRList[ssrIndex].tilapia2VARs[i].alt.length);
+
+													for(var k = start-200;k <= end+200;k++){
+														if(k >= position - 1 && k < position + length - 1){
 															ssr += ("<td>"+altArray[altIndex]+"</td>");
 															altIndex++;
 														}
@@ -118,7 +116,7 @@ $(function(){
 												}
 
 												swal({
-												  title: "<h1>SSRdatail</h1>",
+												  title: "<h1>SSRdatail (Blue: reference, White: alt)</h1>",
 												  html: "<div style='overflow:scroll;'><table  class='table table-bordered'>"+ssr+"</table></div>",
 												  width: 1000 
 												});
