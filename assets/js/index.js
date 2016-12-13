@@ -59,6 +59,7 @@ $(function(){
 												
 												var geneIndex = $(this).data('gene');
 												var ssrIndex = $(this).data('ssr');
+
 												var start = SSRClusterList[geneIndex].SSRList[ssrIndex].start;
 												var end = SSRClusterList[geneIndex].SSRList[ssrIndex].end;
 												var pattern = SSRClusterList[geneIndex].SSRList[ssrIndex].SSRPattern1;

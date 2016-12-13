@@ -808,7 +808,7 @@
 						</td>
 					</tr>
 					<tr>
-						<td>SSRPattern1</td>
+						<td>SSRPattern1 {{:#index}} </td>
 						<td>SSRPattern2</td>
 						<td>start</td>
 						<td>end</td>
@@ -818,7 +818,7 @@
 				</thead>
 				<tbody>
 					{{for SSRList}}
-						<tr class="variationDetail" data-gene={{:#index}} data-ssr={{>#index}}>
+						<tr class="variationDetail" data-gene={{>geneIndex}} data-ssr={{>#index}}>
 							<td>{{>SSRPattern1}}</td>
 							<td>{{>SSRPattern2}}</td>
 							<td>{{>start}}</td>

@@ -51,6 +51,7 @@ module.exports = {
 			
 
 			let result = new Array();
+			var geneIndex = 0;
 			for(var i in SSRObj){
 				
 				var arr = Object.keys(SSRObj[i]).map(function (key) { 
@@ -77,17 +78,18 @@ module.exports = {
 							j = 0;
 						}
 					}
+					arr[k].dataValues.geneIndex = geneIndex;
 					arr[k].dataValues.SSR = SSR;
 					arr[k].dataValues.variationLength = arr[k].dataValues.tilapia2VARs.length;
 					arr[k].dataValues.variation = JSON.stringify(arr[k].dataValues.tilapia2VARs);
 				}
 
-				console.log('arr->',arr);
 				let SSRInformation = {
 					geneId: i,
 					SSRList: arr
 				}
 				result.push(SSRInformation);
+				geneIndex++;
 			}
 
 			return res.json(result);
