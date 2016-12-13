@@ -417,6 +417,7 @@
 									</tr>
 								</thead>
 								<div class="tilapia_2_load">
+									<big style="color:green;"><span id="tilapia_2_GO_amount"></span></big>
 									<tbody id="tilapia_2_step1_table">
 										
 									</tbody>
@@ -782,7 +783,7 @@
 			<table class="table m-t-30">
 				<thead>
 					<tr>
-						<td>Chromosome: {{:id}}
+						<td>Chromosome: {{:id}}  <small style="color:green;">(Amount: {{:geneIdList.length}})</small>
 							<button type="button" class="btn btn-success tilapia_2_step2_button" data-index={{:#index}}> SSR </button>
 						</td>
 					</tr>
@@ -803,7 +804,7 @@
 			<table class="table m-t-30">
 				<thead>
 					<tr>
-						<td colspan="5">Gene Id: {{:geneId}}
+						<td colspan="5">Gene Id: {{:geneId}} <small style="color:green;">(Amount: {{:SSRList.length}})</small>
 						</td>
 					</tr>
 					<tr>

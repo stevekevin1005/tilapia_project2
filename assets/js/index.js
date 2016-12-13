@@ -3,6 +3,7 @@ $(function(){
 
 	$("#tilapia_2_go_search").on('click', function(){	
 		$("#tilapia_2_step1_table").html("");
+		$("#tilapia_2_GO_amount").html("");
 		var key = $("#GODetection input").val();
 		if(key != ''){
 			$(".tilapia_2_load").addClass("loader");
@@ -12,7 +13,9 @@ $(function(){
 				success: function(goList){
 					$(".tilapia_2_load").removeClass("loader");
 					var goListTemplate = $.templates( "#goList" );
+					console.log('goList->', goList);
 					var goListHtml = goListTemplate.render(goList);
+					$("#tilapia_2_GO_amount").html("Amount:"+goList.length);
 					$("#tilapia_2_step1_table").append(goListHtml);
 					/////step2////
 					$(".tilapia_2_step1_row").on('click', function(){
