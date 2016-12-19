@@ -25,7 +25,7 @@ $(function(){
 						$("#GeneCluster >div:last").html("");
 						$(".tilapia_2_load").addClass("loader");
 						$('#Tilapia2 a[href="#GeneCluster"]').tab('show');
-
+						$("#GeneCluster >h4:last").html("GO:"+goList[index].name);
 						$.ajax({
 							url: "/tilapia/2/contig?geneIdList="+geneIdList,
 							type: 'get',
@@ -41,6 +41,7 @@ $(function(){
 									var index = $(this).data('index');
 									var geneIdList = JSON.stringify(geneClusterList[index].geneIdList);
 									var contig = geneClusterList[index].id;
+									$("#SSRDetection >h4:last").html("Contig:"+contig);
 									$("#SSRDetection >div:last").html("");
 									$(".tilapia_2_load").addClass("loader");
 									$('#Tilapia2 a[href="#SSRDetection"]').tab('show');
