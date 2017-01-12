@@ -54,6 +54,9 @@ $(function(){
 											$(".tilapia_2_load").removeClass("loader");
 											var SSRClusterTemplate = $.templates( "#SSRClusterList" );
 											var SSRClusterHtml = SSRClusterTemplate.render(SSRClusterList);
+											console.log('contig->', contig);
+											var iframe = '<iframe id="v5v0sz" width="1000" src="https://www.ncbi.nlm.nih.gov/projects/sviewer/embedded_iframe.html?iframe=v5v0sz&id='+contig.split("(")[0].trim()+'"></iframe>';
+											$("#SSRDetection >div:last").append(iframe);
 											$("#SSRDetection >div:last").append(SSRClusterHtml);
 
 											$(".variationDetail").on('click', function(){
