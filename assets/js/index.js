@@ -18,6 +18,7 @@ $(function(){
 					$("#tilapia_2_GO_amount").html("Amount:"+goList.length);
 					$("#tilapia_2_step1_table").append(goListHtml);
 					/////step2////
+					$(".tilapia_2_step1_row").unbind();
 					$(".tilapia_2_step1_row").on('click', function(){
 						var index = $(this).data('index');
 						var geneIdList = JSON.stringify(goList[index].geneId);
@@ -36,7 +37,7 @@ $(function(){
 								var geneClusterHtml = geneClusterTemplate.render(geneClusterList);
 								$("#GeneCluster >div:last").append(geneClusterHtml);
 								/////step3////
-
+								$(".tilapia_2_step2_button").unbind();
 								$(".tilapia_2_step2_button").on('click', function(){
 									var index = $(this).data('index');
 									var geneIdList = JSON.stringify(geneClusterList[index].geneIdList);
