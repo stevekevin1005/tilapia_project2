@@ -18,3 +18,7 @@
 .variationDetail {
 	cursor: pointer;
 }
+
+th{
+  text-align: center;
+}

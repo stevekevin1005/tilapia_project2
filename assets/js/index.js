@@ -2,6 +2,7 @@ $(function(){
 	//tilapia 2 go detection "step 1"
 
 	$("#tilapia_2_go_search").on('click', function(){	
+
 		$("#tilapia_2_step1_table").html("");
 		$("#tilapia_2_GO_amount").html("");
 		var key = $("#GODetection input").val();
@@ -15,7 +16,7 @@ $(function(){
 					var goListTemplate = $.templates( "#goList" );
 					console.log('goList->', goList);
 					var goListHtml = goListTemplate.render(goList);
-					$("#tilapia_2_GO_amount").html("Amount:"+goList.length);
+					$("#tilapia_2_GO_amount").html("Found GO Terms: "+goList.length)+" terms";
 					$("#tilapia_2_step1_table").append(goListHtml);
 					/////step2////
 					$(".tilapia_2_step1_row").unbind();
@@ -56,8 +57,7 @@ $(function(){
 											var SSRClusterTemplate = $.templates( "#SSRClusterList" );
 											var SSRClusterHtml = SSRClusterTemplate.render(SSRClusterList);
 											console.log('contig->', contig);
-											var iframe = '<iframe id="v5v0sz" width="1000" src="https://www.ncbi.nlm.nih.gov/projects/sviewer/embedded_iframe.html?iframe=v5v0sz&id='+contig.split("(")[0].trim()+'"></iframe>';
-											$("#SSRDetection >div:last").append(iframe);
+											
 											$("#SSRDetection >div:last").append(SSRClusterHtml);
 
 											$(".variationDetail").on('click', function(){
@@ -71,7 +71,7 @@ $(function(){
 												var SSRArray = SSRClusterList[geneIndex].SSRList[ssrIndex].SSR;
 
 												var ssr = "<tr style='background: antiquewhite'>";
-												for(var i = start-200 ;i<= end+200 ;i++ ){
+												for(var i = start-199 ;i<= end+200 ;i++ ){
 													ssr += ("<td>"+i+"</td>")	;
 												}
 												ssr += "</tr>";
