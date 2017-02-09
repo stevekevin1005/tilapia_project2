@@ -9,7 +9,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<title>Tilapia variation detection system</title>
+	
 
 	<!-- Bootstrap Core CSS -->
 	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -88,7 +88,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-6 col-sm-6 portfolio-item">
+<!-- 				<div class="col-md-6 col-sm-6 portfolio-item">
 					<a href="#Tilapia1" class="portfolio-link" data-toggle="modal">
 						<img src="img/portfolio/taiwan.jpg" width=100% class="img-responsive" alt="">
 					</a>
@@ -96,7 +96,7 @@
 						<h4>Tilapia 1.0</h4>
 						<p class="text-muted">Tilapia 1.0</p>
 					</div>
-				</div>
+				</div> -->
 				<div class="col-md-6 col-sm-6 portfolio-item">
 					<a href="#Tilapia2" class="portfolio-link" data-toggle="modal">
 						<img src="img/portfolio/taiwan.jpg" width=100% class="img-responsive" alt="">
@@ -129,8 +129,8 @@
 						<img src="img/portfolio/geneOntology.jpeg" width=100% class="img-responsive" alt="">
 					</a>
 					<div class="portfolio-caption">
-						<h4>Gene Ontology (Tilapia 1.0)</h4>
-						<p class="text-muted">variant on ssr filter by gene ontology</p>
+						<h4>Gene Ontology</h4>
+						<p class="text-muted">Tilapia gene ontology data </p>
 					</div>
 				</div>
 				<div class="col-md-4 col-sm-6 portfolio-item">
@@ -143,7 +143,8 @@
 						<img src="img/portfolio/ssr.png" width=100% class="img-responsive" alt="">
 					</a>
 					<div class="portfolio-caption">
-						<h4>SSR (Tilapia 1.0)</h4>
+						<h4>SSR</h4>
+						<p class="text-muted">Tilapia(euro) short sequence repeat data </p>
 					</div>
 				</div>
 				<div class="col-md-4 col-sm-6 portfolio-item">
@@ -156,7 +157,8 @@
 						<img src="img/portfolio/variation.png" width=100% class="img-responsive" alt="">
 					</a>
 					<div class="portfolio-caption">
-						<h4>Variation (Tilapia 1.0)</h4>
+						<h4>Variation</h4>
+						<p class="text-muted">Tilapia(taiwan) variation on tilapia(euro) data </p>
 					</div>
 				</div>
 			</div>
@@ -256,34 +258,6 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="form-inline" role="form">
-						<div class="form-group">
-							<input type="text" class="form-group" size="60">
-							<button type="button" class="btn btn-success">
-								<i class="fa fa-check"></i> Search
-							</button>
-						</div>
-					</div>
-				</div>
-				<dic class="row">
-					<table class="table table-striped table-bordered">
-						<thead>
-							<tr>
-								<th width="18%">GO ID</th>
-								<th width="64%">Name</th>
-								<th width="18%">Type</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>123</td>
-								<td>123</td>
-								<td>123</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-				<div class="row">
 					<div class="modal-body">
 						<button type="button" class="btn btn-primary" data-dismiss="modal">
 							<i class="fa fa-times"></i> Close Project
@@ -307,7 +281,8 @@
 					<div class="col-lg-8 col-lg-offset-2">
 						<div class="modal-body">
 							<!-- Project Details Go Here -->
-							<h2>Tilapia 2.0</h2>
+							<h2>TILAPIA SSR VARIATIONS</h2>
+							<p class="item-intro text-muted">(Taiwan v.s Euro)</p>
 						</div>
 					</div>
 				</div>
@@ -389,36 +364,69 @@
 						<div class="modal-body">
 							<!-- Project Details Go Here -->
 							<h2>Gene Ontology</h2>
+							<p class="item-intro text-muted">Tilapia gene ontology data</p>
 						</div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="form-inline" role="form">
-						<div class="form-group">
-							<input type="text" class="form-group" size="60">
-							<button type="button" class="btn btn-success">
-								<i class="fa fa-check"></i> Search
-							</button>
-						</div>
+					<div class="modal-body">
+						<table class="table m-t-30">
+							<thead>
+								<th>Name</th>
+								<th>Amount</th>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Term(total)</td>
+									<td>45218</td>
+								</tr>
+								<tr>
+									<td>Term(kind)</td>
+									<td>7</td>
+								</tr>
+								<tr>
+									<td>Term(biological_process)</td>
+									<td>29787</td>
+								</tr>
+								<tr>
+									<td>Term(molecular_function)</td>
+									<td>11223</td>
+								</tr>
+								<tr>
+									<td>Term(cellular_component)</td>
+									<td>4173</td>
+								</tr>
+								<tr>
+									<td>Term(subset)</td>
+									<td>19</td>
+								</tr>
+								<tr>
+									<td>Term(external)</td>
+									<td>5</td>
+								</tr>
+								<tr>
+									<td>Term(synonym_scope)</td>
+									<td>4</td>
+								</tr>
+								<tr>
+									<td>Term(synonym_type)</td>
+									<td>3</td>
+								</tr>
+								<tr>
+									<td>Term(metadata)</td>
+									<td>2</td>
+								</tr>
+								<tr>
+									<td>Term(relationship)</td>
+									<td>1</td>
+								</tr>
+								<tr>
+									<td>Term(universal)</td>
+									<td>1</td>
+								</tr>
+							</tbody>
+						</table>
 					</div>
-				</div>
-				<dic class="row">
-					<table class="table table-striped table-bordered">
-						<thead>
-							<tr>
-								<th width="18%">GO ID</th>
-								<th width="64%">Name</th>
-								<th width="18%">Type</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>123</td>
-								<td>123</td>
-								<td>123</td>
-							</tr>
-						</tbody>
-					</table>
 				</div>
 				<div class="row">
 					<div class="modal-body">
@@ -446,55 +454,25 @@
 						<div class="modal-body">
 							<!-- Project Details Go Here -->
 							<h2>SSR</h2>
-							<p class="item-intro text-muted">temp</p>
+							<p class="item-intro text-muted">Tilapia(euro) short sequence repeat data</p>
 						</div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="form-inline" role="form">
-						<div class="form-group">
-							<select class="form-control">
-								<option>GO:0001501 skeletal system development</option>
-								<option>GO:0061061 muscle structure development</option>
-								<option>GO:0006954 inflammatory response</option>
-							</select>
-							<select class="form-control">
-								<option>by Go</option>
-								<option>by Gene</option>
-							</select>
-							<button type="button" class="btn btn-success">
-								<i class="fa fa-check"></i> GO
-							</button>
-						</div>
+					<div class="modal-body">
+						<table class="table m-t-30">
+							<thead>
+								<th>Name</th>
+								<th>Amount</th>
+							</thead>
+							<tbody>
+								<tr>
+									<td>SSR(total)</td>
+									<td>122432</td>
+								</tr>
+							</tbody>
+						</table>
 					</div>
-				</div>
-				<dic class="row">
-					<table class="table table-striped table-bordered">
-						<thead>
-							<th>SSR id</th>
-							<th>Gene Name</th>
-							<th>Contig</th>
-							<th>Position</th>
-							<th>ALT</th>
-							<th>REF</th>
-							<th>SSR Pattern</th>
-							<th>SSR Start</th>
-							<th>SSR End</th>
-						</thead>
-						<tbody>
-							<tr>
-								<td>123</td>
-								<td>123</td>
-								<td>123</td>
-								<td>123</td>
-								<td>123</td>
-								<td>123</td>
-								<td>123</td>
-								<td>123</td>
-								<td>123</td>
-							</tr>
-						</tbody>
-					</table>
 				</div>
 				<div class="row">
 					<div class="modal-body">
@@ -522,57 +500,25 @@
 						<div class="modal-body">
 							<!-- Project Details Go Here -->
 							<h2>Variation</h2>
-							<p class="item-intro text-muted">temp</p>
+							<p class="item-intro text-muted">Tilapia(taiwan) variation on tilapia(euro) data</p>
 						</div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="form-inline" role="form">
-						<div class="form-group">
-							<select class="form-control">
-								<option>GO:0001501 skeletal system development</option>
-								<option>GO:0061061 muscle structure development</option>
-								<option>GO:0006954 inflammatory response</option>
-							</select>
-							<select class="form-control">
-								<option>On Gene</option>
-								<option>On Contig</option>
-								<option>On Gene(SSR)</option>
-								<option>On Contig(SSR)</option>
-							</select>
-							<button type="button" class="btn btn-success">
-								<i class="fa fa-check"></i> GO
-							</button>
-						</div>
+					<div class="modal-body">
+						<table class="table m-t-30">
+							<thead>
+								<th>Name</th>
+								<th>Amount</th>
+							</thead>
+							<tbody>
+								<tr>
+									<td>SSR(total)</td>
+									<td>122432</td>
+								</tr>
+							</tbody>
+						</table>
 					</div>
-				</div>
-				<dic class="row">
-					<table class="table table-striped table-bordered">
-						<thead>
-							<th>SSR id</th>
-							<th>Gene Name</th>
-							<th>Contig</th>
-							<th>Position</th>
-							<th>ALT</th>
-							<th>REF</th>
-							<th>SSR Pattern</th>
-							<th>SSR Start</th>
-							<th>SSR End</th>
-						</thead>
-						<tbody>
-							<tr>
-								<td>123</td>
-								<td>123</td>
-								<td>123</td>
-								<td>123</td>
-								<td>123</td>
-								<td>123</td>
-								<td>123</td>
-								<td>123</td>
-								<td>123</td>
-							</tr>
-						</tbody>
-					</table>
 				</div>
 				<div class="row">
 					<div class="modal-body">
@@ -611,7 +557,7 @@
 	<script src="bower_components/jsrender/jsrender.js"></script>
 
 	<script id="goList" type="text/x-jsrender">
-		<tr data-index={{:#index}} class="tilapia_2_step1_row">
+		<tr data-index={{:#index}} class="tilapia_2_step1_row" {{if term_type=="cellular_component"}}style="background-color: aliceblue;"{{/if}}>
 			<td>{{:acc}}</td>
 			<td>{{:name}}</td>
 			<td>{{:term_type}}</td>

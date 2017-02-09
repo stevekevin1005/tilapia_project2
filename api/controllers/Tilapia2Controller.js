@@ -2,7 +2,7 @@ module.exports = {
 	getGo: async (req, res) => {
 		try{
 			let name = req.query.name || '';
-			let goList = await sequelize.query("SELECT * FROM `term` WHERE name Like '%"+name+"%' ORDER BY `term_type`;");
+			let goList = await sequelize.query("SELECT * FROM `term` WHERE name Like '%"+name+"%' or acc Like '%"+name+"%' ORDER BY `term_type`;");
 			
 			let result = await Tilapia2Service.getGeneId(goList[0]);
 
