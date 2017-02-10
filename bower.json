@@ -18,6 +18,7 @@
   "dependencies": {
     "es6-promise": "*",
     "jsrender": "^0.9.83",
-    "sweetalert2": "^4.2.6"
+    "sweetalert2": "^4.2.6",
+    "Flot": "flot#^0.8.3"
   }
 }

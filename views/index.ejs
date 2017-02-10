@@ -468,10 +468,12 @@
 							<tbody>
 								<tr>
 									<td>SSR(total)</td>
-									<td>122432</td>
+									<td>122,432</td>
 								</tr>
 							</tbody>
 						</table>
+						<div id="SSR-float1" class="demo-placeholder" style="width: 90vw;height: 400px;"></div>
+						<div id="SSR-float2" class="demo-placeholder" style="width: 90vw;height: 400px;margin-top: 100px;"></div>
 					</div>
 				</div>
 				<div class="row">
@@ -513,11 +515,23 @@
 							</thead>
 							<tbody>
 								<tr>
-									<td>SSR(total)</td>
-									<td>122432</td>
+									<td>Variation(total)</td>
+									<td>4,167,187</td>
+								</tr>
+								<tr>
+									<td>Variation(on SSR)</td>
+									<td>413,499</td>
 								</tr>
 							</tbody>
 						</table>
+						<h4>Variation(total)</h4>
+						<div id="Variation-float1" class="demo-placeholder" style="width: 90vw;height: 400px;"></div>
+						<h4>Variation(total)</h4>
+						<div id="Variation-float2" class="demo-placeholder" style="width: 90vw;height: 400px;margin-top: 100px;"></div>
+						<h4>Variation(on SSR)</h4>
+						<div id="Variation-float3" class="demo-placeholder" style="width: 90vw;height: 400px;"></div>
+						<h4>Variation(on SSR)</h4>
+						<div id="Variation-float4" class="demo-placeholder" style="width: 90vw;height: 400px;margin-top: 100px;"></div>
 					</div>
 				</div>
 				<div class="row">
@@ -555,6 +569,9 @@
 
 	<!-- JSrender-->
 	<script src="bower_components/jsrender/jsrender.js"></script>
+	<!-- flot-->
+	<script language="javascript" type="text/javascript" src="bower_components/Flot/jquery.flot.js"></script>
+	<script language="javascript" type="text/javascript" src="bower_components/Flot/jquery.flot.categories.js"></script>
 
 	<script id="goList" type="text/x-jsrender">
 		<tr data-index={{:#index}} class="tilapia_2_step1_row" {{if term_type=="cellular_component"}}style="background-color: aliceblue;"{{/if}}>

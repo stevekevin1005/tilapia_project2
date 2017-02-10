@@ -172,4 +172,124 @@ $(function(){
 			)
 		}
 	});
+
+	var ssr_data1 = [ 
+		["NC_022199.1(LG1)", 4838], 
+		["NC_022200.1(LG2)", 3465],
+		["NC_022201.1(LG3)", 2370],
+		["NC_022202.1(LG4)", 3969],
+		["NC_022203.1(LG5)", 5280],
+		["NC_022204.1(LG6)", 5686],
+		["NC_022205.1(LG7)", 7661],
+		["NC_022206.1(LG8-24)", 3858],
+		["NC_022207.1(LG9)", 2612],
+		["NC_022208.1(LG10)", 2175]
+		["NC_022209.1(LG11)", 4920],
+	];
+
+	var ssr_data2 = [
+		["NC_022210.1(LG12)", 4980],
+		["NC_022211.1(LG13)", 4901],
+		["NC_022212.1(LG14)", 5091],
+		["NC_022213.1(LG15)", 4062],
+		["NC_022214.1(LG16-21)", 4938],
+		["NC_022215.1(LG17)", 5003],
+		["NC_022216.1(LG18)", 3711],
+		["NC_022217.1(LG19)", 3884],
+		["NC_022218.1(LG20)", 4650],
+		["NC_022219.1(LG22)", 3743],
+		["NC_022220.1(LG23)", 3012]
+	];
+
+	var variation_data1 = [ 
+		["NC_022199.1(LG1)", 119174], 
+		["NC_022200.1(LG2)", 85939],
+		["NC_022201.1(LG3)", 125001],
+		["NC_022202.1(LG4)", 118263],
+		["NC_022203.1(LG5)", 164912],
+		["NC_022204.1(LG6)", 174902],
+		["NC_022205.1(LG7)", 174541],
+		["NC_022206.1(LG8-24)", 174705],
+		["NC_022207.1(LG9)", 115797],
+		["NC_022208.1(LG10)", 67391]
+		["NC_022209.1(LG11)", 103601],
+	];
+
+	var variation_data2 = [
+		["NC_022210.1(LG12)", 161215],
+		["NC_022211.1(LG13)", 122183],
+		["NC_022212.1(LG14)", 145372],
+		["NC_022213.1(LG15)", 151368],
+		["NC_022214.1(LG16-21)", 127511],
+		["NC_022215.1(LG17)", 153429],
+		["NC_022216.1(LG18)", 156455],
+		["NC_022217.1(LG19)", 118158],
+		["NC_022218.1(LG20)", 121493],
+		["NC_022219.1(LG22)", 106528],
+		["NC_022220.1(LG23)", 132503]
+	];
+	$.plot("#SSR-float1", [ ssr_data1 ], {
+		series: {
+			bars: {
+				show: true,
+				barWidth: 0.6,
+				align: "center",
+
+			}
+		},
+		yaxis: {
+			show: true
+		},
+		xaxis: {
+			mode: "categories",
+			tickLength: 0
+		}
+	});
+
+	$.plot("#SSR-float2", [ ssr_data2 ], {
+		series: {
+			bars: {
+				show: true,
+				barWidth: 0.4,
+				align: "center"
+			}
+		},
+		xaxis: {
+			mode: "categories",
+			tickLength: 0
+		}
+	});
+
+	$.plot("#Variation-float1", [ variation_data1 ], {
+		series: {
+			bars: {
+				show: true,
+				barWidth: 0.6,
+				align: "center",
+
+			}
+		},
+		yaxis: {
+			show: true
+		},
+		xaxis: {
+			mode: "categories",
+			tickLength: 0
+		}
+	});
+
+	$.plot("#Variation-float2", [ variation_data2 ], {
+		series: {
+			bars: {
+				show: true,
+				barWidth: 0.4,
+				align: "center"
+			}
+		},
+		xaxis: {
+			mode: "categories",
+			tickLength: 0
+		}
+	});
+
 });
