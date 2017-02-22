@@ -32,7 +32,7 @@ module.exports = {
 			let SSRObj = {};
 			// let query = new Array();
 			let SSRList = await Tilapia2Service.getSSR(geneIdList);
-			console.log('SSRList->', SSRList);
+
 			for(var i in SSRList){
 				for(var k in SSRList[i].tilapia2infs){
 					var geneId = SSRList[i].tilapia2infs[k].geneId;
@@ -82,6 +82,9 @@ module.exports = {
 					arr[k].dataValues.SSR = SSR;
 					arr[k].dataValues.variationLength = arr[k].dataValues.tilapia2VARs.length;
 					arr[k].dataValues.variation = JSON.stringify(arr[k].dataValues.tilapia2VARs);
+					arr[k].dataValues.start += 1;
+					arr[k].dataValues.end += 1;
+					arr[k].dataValues.contig2 = arr[k].dataValues.contig.split('(')[0];
 				}
 
 				let SSRInformation = {

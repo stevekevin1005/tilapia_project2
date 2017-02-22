@@ -71,7 +71,7 @@ $(function(){
 												var SSRArray = SSRClusterList[geneIndex].SSRList[ssrIndex].SSR;
 
 												var ssr = "<tr style='background: antiquewhite'>";
-												for(var i = start-199 ;i<= end+200 ;i++ ){
+												for(var i = start-200 ;i<= end+200 ;i++ ){
 													ssr += ("<td>"+i+"</td>")	;
 												}
 												ssr += "</tr>";

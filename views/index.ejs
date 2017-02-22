@@ -306,9 +306,9 @@
 							<table class="table m-t-30">
 								<thead>
 									<tr>
-										<th>id</th>
-										<th>name</th>
-										<th>term_type</th>
+										<th>GO ID</th>
+										<th>GO TERM</th>
+										<th>GO TERM TYPE</th>
 									</tr>
 								</thead>
 								<div class="tilapia_2_load">
@@ -574,7 +574,7 @@
 	<script language="javascript" type="text/javascript" src="bower_components/Flot/jquery.flot.categories.js"></script>
 
 	<script id="goList" type="text/x-jsrender">
-		<tr data-index={{:#index}} class="tilapia_2_step1_row" {{if term_type=="cellular_component"}}style="background-color: aliceblue;"{{/if}}>
+		<tr data-index={{:#index}} class="tilapia_2_step1_row" {{if term_type=="cellular_component"}}style="background-color: aliceblue;"{{else term_type=="molecular_function"}}style="background-color:greenyellow;"{{/if}}>
 			<td>{{:acc}}</td>
 			<td>{{:name}}</td>
 			<td>{{:term_type}}</td>
@@ -582,24 +582,33 @@
 	</script>
 
 	<script id="geneClusterList" type="text/x-jsrender">
-		<div class="col-md-4">
-			<table class="table m-t-30">
-				<thead>
-					<tr>
-						<td>Contig: {{:id}}
-							<button type="button" class="btn btn-success tilapia_2_step2_button" data-index={{:#index}}> SSR </button>
-						</td>
-					</tr>
-				</thead>
-				<tbody>
-					{{for geneIdList}}
+		
+		{{if #index%3==0}}
+		<div class="row">
+		{{/if}}
+			<div class="col-md-4">
+				<table class="table m-t-30">
+					<thead>
 						<tr>
-							<td>Gene Id: {{>geneId}}</td>
+							<th colspan=2>Contig: {{:id}}
+								<button type="button" class="btn btn-success tilapia_2_step2_button" data-index={{:#index}}> SSR </button>
+							</th>
 						</tr>
-					{{/for}}
-				</tbody>
-			</table>
+					</thead>
+					<tbody>
+						{{for geneIdList}}
+							<tr>
+								<td>Gene Id: {{>geneId}}</td>
+								<td><a target="_blank" href="https://www.ncbi.nlm.nih.gov/gene/{{>geneId}}"><button type="button" class="btn btn-info">Ncbi Info</button></a></td>
+							</tr>
+						{{/for}}
+					</tbody>
+				</table>
+			</div>
+		{{if #index%3==2}}
 		</div>
+		<hr>
+		{{/if}}
 	</script>
 
 	<script id="SSRClusterList" type="text/x-jsrender">
@@ -620,9 +629,9 @@
 				<tbody>
 					{{for SSRList}}
 						<tr>
-							<td>{{>SSRPattern1}}</td>
-							<td>{{>start}}<small><a target="_blank" href="https://www.ncbi.nlm.nih.gov/projects/sviewer/?id={{>contig}}&mk={{>start}}|{{>start}}|green|9&v={{>start}}:{{>start}}"><button type="button" class="btn btn-info">info</button></a></small></td>
-							<td>{{>end}}<small><a target="_blank" href="https://www.ncbi.nlm.nih.gov/projects/sviewer/?id={{>contig}}&mk={{>end}}|{{>end}}|green|9&v={{>end}}:{{>end}}"><button type="button" class="btn btn-info">info</button></a></small></td>
+							<td>{{>SSRPattern1}} or {{>SSRPattern2}}</td>
+							<td>{{>start}}<small><a target="_blank" href="https://www.ncbi.nlm.nih.gov/projects/sviewer/?id={{>contig2}}&mk={{>start}}|{{>start}}|green|9&v={{>start}}:{{>start}}"><button type="button" class="btn btn-info">info</button></a></small></td>
+							<td>{{>end}}<small><a target="_blank" href="https://www.ncbi.nlm.nih.gov/projects/sviewer/?id={{>contig2}}&mk={{>end}}|{{>end}}|green|9&v={{>end}}:{{>end}}"><button type="button" class="btn btn-info">info</button></a></small></td>
 							<td>{{>region}}</td>
 							<td>{{>variationLength}}<small><button data-gene={{>geneIndex}} data-ssr={{>#index}} type="button" class="variationDetail btn btn-info">info</button></small></td>
 						</tr>
