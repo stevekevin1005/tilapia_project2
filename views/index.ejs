@@ -97,13 +97,13 @@
 						<p class="text-muted">Tilapia 1.0</p>
 					</div>
 				</div> -->
-				<div class="col-md-6 col-sm-6 portfolio-item">
+				<div class="col-md-6 col-sm-6 col-md-offset-3 portfolio-item">
 					<a href="#Tilapia2" class="portfolio-link" data-toggle="modal">
 						<img src="img/portfolio/taiwan.jpg" width=100% class="img-responsive" alt="">
 					</a>
 					<div class="portfolio-caption">
 						<h4>Tilapia SSR variations</h4>
-						<p class="text-muted">(Taiwan v.s Euro)</p>
+						<p class="text-muted">(Taiwan v.s Esembl)</p>
 					</div>
 				</div>
 			</div>
@@ -144,7 +144,7 @@
 					</a>
 					<div class="portfolio-caption">
 						<h4>SSR</h4>
-						<p class="text-muted">Tilapia(euro) short sequence repeat data </p>
+						<p class="text-muted">Tilapia(Esembl) short sequence repeat data </p>
 					</div>
 				</div>
 				<div class="col-md-4 col-sm-6 portfolio-item">
@@ -158,7 +158,7 @@
 					</a>
 					<div class="portfolio-caption">
 						<h4>Variation</h4>
-						<p class="text-muted">Tilapia(taiwan) variation on tilapia(euro) data </p>
+						<p class="text-muted">Tilapia(taiwan) variation on Tilapia(Esembl) data </p>
 					</div>
 				</div>
 			</div>
@@ -282,7 +282,7 @@
 						<div class="modal-body">
 							<!-- Project Details Go Here -->
 							<h2>TILAPIA SSR VARIATIONS</h2>
-							<p class="item-intro text-muted">(Taiwan v.s Euro)</p>
+							<p class="item-intro text-muted">(Taiwan v.s Esembl)</p>
 						</div>
 					</div>
 				</div>
@@ -291,7 +291,7 @@
 				  <!-- Nav tabs -->
 				  <ul class="nav nav-tabs" role="tablist">
 				    <li role="presentation" class="active"><a href="#GODetection" aria-controls="home" role="tab" data-toggle="tab">GO term</a></li>
-				    <li role="presentation"><a href="#GeneCluster" aria-controls="profile" role="tab" data-toggle="tab">Genes cluster(with SSR variations)</a></li>
+				    <li role="presentation"><a href="#GeneCluster" aria-controls="profile" role="tab" data-toggle="tab">Genes cluster</a></li>
 				    <li role="presentation"><a href="#SSRDetection" aria-controls="profile" role="tab" data-toggle="tab">SSR markers</a></li>
 				  </ul>
 
@@ -502,7 +502,7 @@
 						<div class="modal-body">
 							<!-- Project Details Go Here -->
 							<h2>Variation</h2>
-							<p class="item-intro text-muted">Tilapia(taiwan) variation on tilapia(euro) data</p>
+							<p class="item-intro text-muted">Tilapia(Taiwan) variation on tilapia(euro) data</p>
 						</div>
 					</div>
 				</div>
@@ -520,7 +520,7 @@
 								</tr>
 								<tr>
 									<td>Variation(on SSR)</td>
-									<td>413,499</td>
+									<td>100,911</td>
 								</tr>
 							</tbody>
 						</table>
@@ -624,6 +624,7 @@
 						<td>end</td>
 						<td>region</td>
 						<td>variation</td>
+						<td></td>
 					</tr>
 				</thead>
 				<tbody>
@@ -634,6 +635,7 @@
 							<td>{{>end}}<small><a target="_blank" href="https://www.ncbi.nlm.nih.gov/projects/sviewer/?id={{>contig2}}&mk={{>end}}|{{>end}}|green|9&v={{>end}}:{{>end}}"><button type="button" class="btn btn-info">info</button></a></small></td>
 							<td>{{>region}}</td>
 							<td>{{>variationLength}}<small><button data-gene={{>geneIndex}} data-ssr={{>#index}} type="button" class="variationDetail btn btn-info">info</button></small></td>
+							<td><button class="btn btn-success">download</button></td>
 						</tr>
 					{{/for}}
 				</tbody>
