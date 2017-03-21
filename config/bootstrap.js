@@ -10,21 +10,23 @@
  */
 
 module.exports.bootstrap = async (cb) => {
-	let ssrlist = await tilapia2SSR.findAll();
-	for(var i in ssrlist){
-		var start = ssrlist[i].start;
-		var end = ssrlist[i].end;
-		var contig = ssrlist[i].contig;
-		let variations = await tilapia2VAR.findAll({
-			where:{
-				position:{
-					$between: [start, end]
-				},
-				contig: contig,
-			}
-		});
-		await ssrlist[i].setTilapia2VARs(variations);
-	}
+	// let ssrlist = await tilapia2SSR.findAll();
+	// for(var i in ssrlist){
+	// 	if(ssrlist[i].id > 64605){
+	// 		var start = ssrlist[i].start;
+	// 		var end = ssrlist[i].end;
+	// 		var contig = ssrlist[i].contig;
+	// 		let variations = await tilapia2VAR.findAll({
+	// 			where:{
+	// 				position:{
+	// 					$between: [start, end]
+	// 				},
+	// 				contig: contig,
+	// 			}
+	// 		});
+	// 		await ssrlist[i].setTilapia2VARs(variations);
+	// 	}	
+	// }
   // It's very important to trigger this callback method when you are finished
   // with the bootstrap!  (otherwise your server will never lift, since it's waiting on the bootstrap)
   cb();
