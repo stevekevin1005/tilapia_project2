@@ -1,6 +1,6 @@
 $(function(){
+	var SSRClusterArray; 
 	//tilapia 2 go detection "step 1"
-
 	$("#tilapia_2_go_search").on('click', function(){	
 
 		$("#tilapia_2_step1_table").html("");
@@ -52,6 +52,7 @@ $(function(){
 										url: "/tilapia/2/ssr?geneIdList="+geneIdList,
 										type: 'get',
 										success: function(SSRClusterList){
+											SSRClusterArray = SSRClusterList
 											console.log('SSRClusterList->', SSRClusterList);
 											$(".tilapia_2_load").removeClass("loader");
 											var SSRClusterTemplate = $.templates( "#SSRClusterList" );
@@ -129,6 +130,62 @@ $(function(){
 												  html: "<div style='overflow:scroll;'><table  class='table table-bordered'>"+ssr+"</table></div>",
 												  width: 1000 
 												});
+											});
+
+											$(".downloadFile").on('click', function(){
+												
+												var geneIndex = $(this).data('gene');
+												var ssrIndex = $(this).data('ssr');
+
+												var start = SSRClusterList[geneIndex].SSRList[ssrIndex].start;
+												var end = SSRClusterList[geneIndex].SSRList[ssrIndex].end;
+												var pattern = SSRClusterList[geneIndex].SSRList[ssrIndex].SSRPattern1;
+												var SSRArray = SSRClusterList[geneIndex].SSRList[ssrIndex].SSR;
+
+												var ssr = ">"+contig+"|"+(start-200).toString()+"|"+(end+200).toString()+" Oreochromis niloticus | NCBI \n";
+												for(var i = 0;i < 200;i++){
+													ssr += SSRClusterList[geneIndex].SSRList[ssrIndex].fk5[i];
+												}
+												for(var i = 0; i < SSRArray.length; i++){
+													ssr += SSRArray[i];
+												}
+												for(var i = 0;i < 200;i++){
+													ssr += SSRClusterList[geneIndex].SSRList[ssrIndex].fk3[i];
+												}
+												ssr += "\n";
+												for(var i = 0; i < SSRClusterList[geneIndex].SSRList[ssrIndex].tilapia2VARs.length; i++){
+													
+													var reflength = parseInt(SSRClusterList[geneIndex].SSRList[ssrIndex].tilapia2VARs[i].ref.length);
+													var altArray = SSRClusterList[geneIndex].SSRList[ssrIndex].tilapia2VARs[i].alt.toUpperCase().split("");
+													var refIndex = 0;
+													var altIndex = 0;
+													var position = parseInt(SSRClusterList[geneIndex].SSRList[ssrIndex].tilapia2VARs[i].position);
+													var length = parseInt(SSRClusterList[geneIndex].SSRList[ssrIndex].tilapia2VARs[i].alt.length);
+													ssr += ">"+contig+"|"+(start-200).toString()+"|"+(end+200+length-reflength).toString()+" Oreochromis niloticus | R.O.C \n";
+
+													for(var k = start-200;k <= end+200;k++){
+														if(k == position - 1){
+															refIndex+=reflength;
+														}
+														if(k >= position - 1 && k < position + length - 1){
+															// ssr += altArray[altIndex];
+															altIndex++;
+														}
+														else{
+															if(refIndex < 200){
+																ssr += SSRClusterList[geneIndex].SSRList[ssrIndex].fk5[refIndex];
+															}
+															else if(200 <= refIndex && refIndex < 200+SSRArray.length){
+																ssr += SSRArray[refIndex-200];
+															}
+															else {
+																ssr += SSRClusterList[geneIndex].SSRList[ssrIndex].fk3[refIndex-200-SSRArray.length]
+															}
+															refIndex++;
+														}
+													}
+												}
+												download("sequence.fasta", ssr);
 											});
 										},
 										error: function(e){
@@ -292,4 +349,18 @@ $(function(){
 		}
 	});
 
+	function download(filename, text) {
+    var pom = document.createElement('a');
+    pom.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+    pom.setAttribute('download', filename);
+
+    if (document.createEvent) {
+      var event = document.createEvent('MouseEvents');
+      event.initEvent('click', true, true);
+      pom.dispatchEvent(event);
+    }
+    else {
+      pom.click();
+    }
+	}
 });

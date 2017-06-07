@@ -635,12 +635,50 @@
 							<td>{{>end}}<small><a target="_blank" href="https://www.ncbi.nlm.nih.gov/projects/sviewer/?id={{>contig2}}&mk={{>end}}|{{>end}}|green|9&v={{>end}}:{{>end}}"><button type="button" class="btn btn-info">info</button></a></small></td>
 							<td>{{>region}}</td>
 							<td>{{>variationLength}}<small><button data-gene={{>geneIndex}} data-ssr={{>#index}} type="button" class="variationDetail btn btn-info">info</button></small></td>
-							<td><button class="btn btn-success">download</button></td>
+							<td><button class="btn btn-success downloadFile" data-gene={{>geneIndex}} data-ssr={{>#index}} >download</button></td>
 						</tr>
 					{{/for}}
 				</tbody>
 			</table>
 		</div>
+	</script>
+	<script type="text/javascript">
+		(function (global) { 
+		    if(typeof (global) === "undefined") {
+		        throw new Error("window is undefined");
+		    }
+
+		    var _hash = "!";
+		    var noBackPlease = function () {
+		        global.location.href += "#";
+
+		        // making sure we have the fruit available for juice (^__^)
+		        global.setTimeout(function () {
+		            global.location.href += "!";
+		        }, 50);
+		    };
+
+		    global.onhashchange = function () {
+		        if (global.location.hash !== _hash) {
+		            global.location.hash = _hash;
+		        }
+		    };
+
+		    global.onload = function () {            
+		        noBackPlease();
+
+		        // disables backspace on page except on input fields and textarea..
+		        document.body.onkeydown = function (e) {
+		            var elm = e.target.nodeName.toLowerCase();
+		            if (e.which === 8 && (elm !== 'input' && elm  !== 'textarea')) {
+		                e.preventDefault();
+		            }
+		            // stopping event bubbling up the DOM tree..
+		            e.stopPropagation();
+		        };          
+		    }
+		})(window);
+		
 	</script>
 </body>
 
