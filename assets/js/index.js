@@ -165,7 +165,7 @@ $(function(){
 													var refIndex = 0;
 													var altIndex = 0;
 													var position = parseInt(SSRClusterList[geneIndex].SSRList[ssrIndex].tilapia2VARs[i].position);
-													ssr += ">"+contig+"|"+(start-200).toString()+"|"+(end+200+altlength-reflength).toString()+" Oreochromis niloticus | R.O.C \n";
+													ssr += "\n>"+contig+"|"+(start-200).toString()+"|"+(end+200+altlength-reflength).toString()+" Oreochromis niloticus | R.O.C \n";
 
 													for(var k = start-200;k <= end+200-reflength+altlength;k++){
 														if(k == position){
