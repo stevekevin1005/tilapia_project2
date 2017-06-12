@@ -68,7 +68,7 @@ module.exports = {
 
 					var start = arr[k].dataValues["start"];
 					var end = arr[k].dataValues["end"];
-					var pattern = arr[k].dataValues["SSRPattern1"].split("");
+					var pattern = arr[k].dataValues["SSRPattern2"].split("");
 					var j = 0;
 					var SSR = new Array();
 					for(start; start <= end; start++){
@@ -86,6 +86,11 @@ module.exports = {
 					arr[k].dataValues.end += 1;
 					arr[k].dataValues.contig2 = arr[k].dataValues.contig.split('(')[0];
 				}
+
+
+				arr = arr.sort(function (a, b) {
+				 return a.start > b.start ? 1 : -1;
+				});
 
 				let SSRInformation = {
 					geneId: i,

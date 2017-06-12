@@ -97,7 +97,7 @@ $(function(){
 														var position =parseInt(SSRClusterList[geneIndex].SSRList[ssrIndex].tilapia2VARs[i].position);
 														var length = parseInt(SSRClusterList[geneIndex].SSRList[ssrIndex].tilapia2VARs[i].ref.length);
 														
-														if((k >= position - 1) && (k < position + length - 1)){
+														if((k >= position) && (k < position + length)){
 															ssr += ("<td>"+refArray[refIndex]+"</td>");
 															refIndex++;
 														}
@@ -114,7 +114,7 @@ $(function(){
 													var length = parseInt(SSRClusterList[geneIndex].SSRList[ssrIndex].tilapia2VARs[i].alt.length);
 
 													for(var k = start-200;k <= end+200;k++){
-														if(k >= position - 1 && k < position + length - 1){
+														if(k >= position&& k < position + length){
 															ssr += ("<td>"+altArray[altIndex]+"</td>");
 															altIndex++;
 														}
@@ -142,7 +142,9 @@ $(function(){
 												var pattern = SSRClusterList[geneIndex].SSRList[ssrIndex].SSRPattern1;
 												var SSRArray = SSRClusterList[geneIndex].SSRList[ssrIndex].SSR;
 
+
 												var ssr = ">"+contig+"|"+(start-200).toString()+"|"+(end+200).toString()+" Oreochromis niloticus | NCBI \n";
+												
 												for(var i = 0;i < 200;i++){
 													ssr += SSRClusterList[geneIndex].SSRList[ssrIndex].fk5[i];
 												}
@@ -153,22 +155,24 @@ $(function(){
 													ssr += SSRClusterList[geneIndex].SSRList[ssrIndex].fk3[i];
 												}
 												ssr += "\n";
+
+
 												for(var i = 0; i < SSRClusterList[geneIndex].SSRList[ssrIndex].tilapia2VARs.length; i++){
 													
 													var reflength = parseInt(SSRClusterList[geneIndex].SSRList[ssrIndex].tilapia2VARs[i].ref.length);
+													var altlength = parseInt(SSRClusterList[geneIndex].SSRList[ssrIndex].tilapia2VARs[i].alt.length);
 													var altArray = SSRClusterList[geneIndex].SSRList[ssrIndex].tilapia2VARs[i].alt.toUpperCase().split("");
 													var refIndex = 0;
 													var altIndex = 0;
 													var position = parseInt(SSRClusterList[geneIndex].SSRList[ssrIndex].tilapia2VARs[i].position);
-													var length = parseInt(SSRClusterList[geneIndex].SSRList[ssrIndex].tilapia2VARs[i].alt.length);
-													ssr += ">"+contig+"|"+(start-200).toString()+"|"+(end+200+length-reflength).toString()+" Oreochromis niloticus | R.O.C \n";
+													ssr += ">"+contig+"|"+(start-200).toString()+"|"+(end+200+altlength-reflength).toString()+" Oreochromis niloticus | R.O.C \n";
 
-													for(var k = start-200;k <= end+200;k++){
-														if(k == position - 1){
+													for(var k = start-200;k <= end+200-reflength+altlength;k++){
+														if(k == position){
 															refIndex+=reflength;
 														}
-														if(k >= position - 1 && k < position + length - 1){
-															// ssr += altArray[altIndex];
+														if(k >= position && k < position + altlength){
+															ssr += altArray[altIndex];
 															altIndex++;
 														}
 														else{
@@ -185,6 +189,7 @@ $(function(){
 														}
 													}
 												}
+												
 												download("sequence.fasta", ssr);
 											});
 										},

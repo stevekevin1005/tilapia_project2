@@ -599,7 +599,7 @@
 						{{for geneIdList}}
 							<tr>
 								<td>Gene Id: {{>geneId}}</td>
-								<td><a target="_blank" href="https://www.ncbi.nlm.nih.gov/gene/{{>geneId}}"><button type="button" class="btn btn-info">Ncbi Info</button></a></td>
+								<td><a target="_blank" href="https://www.ncbi.nlm.nih.gov/gene/{{>geneId}}"><button type="button" class="btn btn-info">NCBI Info</button></a></td>
 							</tr>
 						{{/for}}
 					</tbody>
@@ -630,7 +630,7 @@
 				<tbody>
 					{{for SSRList}}
 						<tr>
-							<td>{{>SSRPattern1}} or {{>SSRPattern2}}</td>
+							<td>{{>SSRPattern2}}</td>
 							<td>{{>start}}<small><a target="_blank" href="https://www.ncbi.nlm.nih.gov/projects/sviewer/?id={{>contig2}}&mk={{>start}}|{{>start}}|green|9&v={{>start}}:{{>start}}"><button type="button" class="btn btn-info">info</button></a></small></td>
 							<td>{{>end}}<small><a target="_blank" href="https://www.ncbi.nlm.nih.gov/projects/sviewer/?id={{>contig2}}&mk={{>end}}|{{>end}}|green|9&v={{>end}}:{{>end}}"><button type="button" class="btn btn-info">info</button></a></small></td>
 							<td>{{>region}}</td>
